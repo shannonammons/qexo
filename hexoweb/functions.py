@@ -42,6 +42,7 @@ def get_setting(name):
 
 def update_provider():
     global _Provider
+    print("provider:-->" + get_setting("PROVIDER"))
     _provider = json.loads(get_setting("PROVIDER"))
     _Provider = get_provider(_provider["provider"], **_provider["params"])
     return _Provider
